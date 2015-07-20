@@ -10,8 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-require('../../../node_modules/traceur/bin/traceur-runtime.js');
 window.React = require('react');
-window.Blink = require('./components/Blink');
+Object.assign(window, require('./components/*.js', {mode: 'hash'}));
 
 require('react_ujs');

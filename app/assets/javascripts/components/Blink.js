@@ -1,9 +1,9 @@
 'use strict';
 
-var React = require('react'),
-    blinkActions = require('../actions/BlinkActions'),
-    blinkStore = require('../stores/BlinkStore'),
-    connectToStores = require('alt/utils/connectToStores');
+const React = require('react'),
+      blinkActions = require('../actions/BlinkActions'),
+      blinkStore = require('../stores/BlinkStore'),
+      connectToStores = require('alt/utils/connectToStores');
 
 class Blink extends React.Component {
     constructor(props) {

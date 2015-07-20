@@ -26,10 +26,12 @@ module BrowserifyReactRails
     # Enable the asset pipeline
     config.assets.enabled = true
     config.assets.paths << Rails.root.join('node_modules')
+    config.assets.paths << Rails.root.join('bower_components')
 
     # Let Browserify know we do some react and ES6 stuff
     config.browserify_rails.paths << '/lib/assets/javascripts/'
-    config.browserify_rails.evaluate_node_modules = true
-    config.browserify_rails.commandline_options = "-t reactify -t [ es6ify --extension=\".js\" ]"
+    config.browserify_rails.evaluate_node_modules = false
+    config.browserify_rails.force = false
+    config.browserify_rails.commandline_options = '-t [ babelify --stage 0 ] -t require-globify'
   end
 end

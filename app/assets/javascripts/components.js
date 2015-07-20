@@ -3,7 +3,8 @@
 //   this file for them to show up in the prerendered html
 //   Also, don't be afraid of using `rake tmp:clear`
 
-require('../../../node_modules/traceur/bin/traceur-runtime.js');
-window.React = require('react');
+require('babel-core/register');
 
-window.Blink = require('./components/Blink');
+// React_ujs needs all components to be available on window.
+// Since manually requiring is too much work, we just use this globify shortcut
+Object.assign(window, require('./components/*.js', {mode: 'hash'}));

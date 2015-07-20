@@ -2,16 +2,24 @@
   "name": "browserify-react-rails",
   "dependencies": {
     "alt": "^0.16.10",
-    "browserify": "^10.2.4",
-    "browserify-incremental": "^1.4.0",
-    "es6ify": "^1.6.0",
+    "babel-core": "^5.7.4",
+    "babelify": "^6.1.3",
+    "browserify": "~> 10.2.4",
+    "browserify-incremental": "^3.0.1",
+    "es6-promise": "^2.3.0",
     "jquery": "^2.1.4",
     "react": "^0.13.3",
-    "reactify": "^1.1.1",
-    "traceur": "0.0.90"
+    "require-globify": "^1.2.1"
   },
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify"
+      ]
+    ]
   },
   "license": "MIT",
   "engines": {
